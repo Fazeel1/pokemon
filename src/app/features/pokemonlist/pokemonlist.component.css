@@ -1,0 +1,91 @@
+.pokemon-detail {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 20px 10px 11px 10px;
+  }
+  
+  /* General Table Styles */
+  .mat-table {
+    width: 100%;
+    table-layout: auto; /* Allows columns to resize based on content */
+  }
+  
+  /* Bootstrap's .table-responsive ensures table scrolls horizontally on small screens */
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  /* Custom styles for table header and cells */
+  th.mat-header-cell {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  td.mat-cell {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Paginator container */
+  .mat-paginator {
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  /* Search Input Field */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #f5f5f5; /* Light background for input */
+    border-radius: 4px;
+  }
+  
+  .mat-form-field .mat-label {
+    color: #6c757d; /* Neutral text color for label */
+  }
+  
+  .mat-input-element {
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Style for the underline */
+  .mat-form-field-underline {
+    background-color: #007bff;
+  }
+  
+  /* Responsive behavior for small screens */
+  @media (max-width: 768px) {
+    .mat-form-field {
+      width: 100%;
+    }
+  
+    .mat-paginator {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+  /* Responsive table: adjust font size and padding for smaller screens */
+  @media (max-width: 576px) {
+    th.mat-header-cell,
+    td.mat-cell {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+
+  .mat-mdc-form-field{
+    display:block
+  }
+  .mat-mdc-text-field-wrapper mdc-text-field mdc-text-field--filled{
+    background-color: #fff;
+  }
+  .mat-mdc-card-title {
+    padding:10px 0px 10px 10px !important;
+  }

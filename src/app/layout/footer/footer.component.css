@@ -1,0 +1,19 @@
+
+ .footer-container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 20px 0px 10px 0px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    color: #6c757d;
+  }
+  

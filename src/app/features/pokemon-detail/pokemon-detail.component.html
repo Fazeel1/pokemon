@@ -1,0 +1,62 @@
+
+  <div class="main-content">
+    <!-- Your main content here -->
+    <div class="pokemon-detail">
+      <!-- Pokémon detail card goes here -->
+  
+  <mat-card>
+    <!-- Pokémon Name -->
+    <mat-card-title>{{ pokemonDetail?.name | titlecase }}</mat-card-title>
+
+    <!-- Pokémon Abilities -->
+    <mat-card-subtitle>Abilities</mat-card-subtitle>
+    <mat-list>
+      <mat-list-item *ngFor="let ability of pokemonDetail?.abilities">
+        <span
+          >{{ ability.ability.name | titlecase }} (Hidden:
+          {{ ability.is_hidden ? "Yes" : "No" }})</span
+        >
+      </mat-list-item>
+    </mat-list>
+
+    <!-- Pokémon Types -->
+    <mat-card-subtitle>Types</mat-card-subtitle>
+
+    <mat-chip-listbox>
+      <mat-chip *ngFor="let type of pokemonDetail?.types" color="primary">{{
+        type.type.name | titlecase
+      }}</mat-chip>
+    </mat-chip-listbox>
+
+    <!-- Pokémon Stats -->
+    <mat-card-subtitle>Stats</mat-card-subtitle>
+    <ng-container *ngIf="pokemonDetail && pokemonDetail.stats">
+      <table
+        mat-table
+        [dataSource]="pokemonDetail.stats"
+        class="mat-elevation-z8"
+      >
+        <!-- Base Stat Column -->
+        <ng-container matColumnDef="base_stat">
+          <th mat-header-cell *matHeaderCellDef>Base Stat</th>
+          <td mat-cell *matCellDef="let stat">{{ stat.base_stat }}</td>
+        </ng-container>
+
+        <!-- Stat Name Column -->
+        <ng-container matColumnDef="stat_name">
+          <th mat-header-cell *matHeaderCellDef>Stat Name</th>
+          <td mat-cell *matCellDef="let stat">
+            {{ stat.stat.name | titlecase }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['stat_name', 'base_stat']"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: ['stat_name', 'base_stat']"
+        ></tr>
+      </table>
+    </ng-container>
+  </mat-card>
+</div>
+</div>
